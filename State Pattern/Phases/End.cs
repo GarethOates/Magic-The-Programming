@@ -4,10 +4,12 @@ namespace MagicTheProgramming.State
 {
     public class End : Phase
     {
-        public override void Handle(Game context)
+        public End() { this.CanEquipCreature = false; }
+
+        public override void Handle(Turn turn)
         {
             Console.WriteLine("Turn over. Starting next player's turn");
-            context.State = new Beginning();
+            turn.Phase = new Beginning();
         }
     }
 }

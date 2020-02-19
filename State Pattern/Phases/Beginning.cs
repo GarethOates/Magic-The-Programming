@@ -4,10 +4,12 @@ namespace MagicTheProgramming.State
 {
     public class Beginning : Phase
     {
-        public override void Handle(Game context)
+        public Beginning() { this.CanEquipCreature = false; }
+
+        public override void Handle(Turn turn)
         {
             Console.WriteLine("Moving to Main Phase");
-            context.State = new Main();
+            turn.Phase = new Main();
         }
     }
 }

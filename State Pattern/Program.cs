@@ -2,29 +2,33 @@
 
 namespace MagicTheProgramming.State
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            // Create a new game. Starting with the beginning phase.
-            Game game = new Game(new Beginning());
+            // Start a new turn. Each turn starts with the beginning phase.
+            Turn turn = new Turn();
 
-            // Create some players who are playing the current game.
-            Player[] players = new Player[4];
-            players[0] = new Player(game, "Inge", 40);
-            players[1] = new Player(game, "Gareth", 40);
-            players[2] = new Player(game, "Issa", 40);
-            players[3] = new Player(game, "Nicko", 4);
+            // A new turn begins. Lets check if we can equip creatures
+            // during the beginning phase.
+            Console.WriteLine(canEquipCreatures(turn));
 
-            // Lets assume the player defined first always goes first.
-            Player currentPlayer = players[0];
+            // Nope.  What abobut in the main phase?
+            turn.NextPhase();
 
-            // The currentPlayer performs legal actions for the
-            // beginning phase and then decides to start their 1st main phase.
-            currentPlayer.GoToNextPhase();
-            currentPlayer.GoToNextPhase();
-            currentPlayer.GoToNextPhase();
-            currentPlayer.GoToNextPhase();
+            // Yup. Creatures can be equipped in the pre-combat main phase.
+            Console.WriteLine(canEquipCreatures(turn));
+
+            turn.NextPhase(); // Combat
+            turn.NextPhase(); // Second Main
+            turn.NextPhase(); // End
+        }
+
+        private static string canEquipCreatures(Turn turn)
+        {
+            return turn.CanEquipCreatures() ?
+            "Allowed to Equip Creatures" :
+            "Not Allowed to Equip Creatures";
         }
     }
 }

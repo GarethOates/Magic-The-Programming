@@ -4,6 +4,8 @@ namespace MagicTheProgramming.State
 {
     public abstract class Phase
     {
-        public abstract void Handle(Game context);
+        public bool CanEquipCreature {get; set;}
+
+        public abstract void Handle(Turn turn);
     }
 }
