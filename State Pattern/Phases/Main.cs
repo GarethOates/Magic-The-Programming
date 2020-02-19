@@ -4,9 +4,10 @@ namespace MagicTheProgramming.State
 {
     public class Main : Phase
     {
-        public override Phase Advance()
+        public override void Handle(Game context)
         {
-            return new Beginning();
+            Console.WriteLine("Moving to Combat Phase");
+            context.State = new Combat();
         }
     }
 }

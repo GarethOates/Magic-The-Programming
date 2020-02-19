@@ -4,22 +4,26 @@ namespace MagicTheProgramming.State
 {
     public class Game
     {
-        public Player[] Players {get; set;}
-        public Phase CurrentPhase {get; private set;}
+        private Phase _state;
 
-        public Game(Player[] players)
+        public Game(Phase state)
         {
-            this.Players = players;
-            this.CurrentPhase = new Beginning();
+            this.State = state;
         }
 
-        public bool isMainPhase => this.CurrentPhase.GetType() == typeof(Main);
-
-        public void GoToNextPhase(Player player, Phase currentPhase)
+        public Phase State
         {
-            // Check that it's the requesting player's turn.
-            // Advance to the next phase.
-            CurrentPhase = this.CurrentPhase.Advance();
+            get { return _state; }
+            set
+            {
+                _state = value;
+                Console.WriteLine($"State: {_state.GetType().Name}");
+            }
+        }
+
+        public void Proceed()
+        {
+            _state.Handle(this);
         }
     }
 }
