@@ -14,8 +14,9 @@ namespace MagicTheProgramming.ObserverPattern
 
         }
 
-        public override void Update()
+        public override void Update(IPlayer subject)
         {
+            Console.WriteLine($"{this.Name}: {subject.Name} has been updated.");
             Console.WriteLine($"{this.Name}: Put a +1/+1 counter on Ajani's Pridemate.");
         }
     }

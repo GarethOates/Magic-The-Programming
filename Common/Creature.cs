@@ -15,7 +15,7 @@ namespace MagicTheProgramming.Common
             this.Toughness = toughness;
         }
 
-        public virtual void Update() {}
+        public virtual void Update(IPlayer player) {}
     }
 }
 

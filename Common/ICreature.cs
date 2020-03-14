@@ -7,6 +7,6 @@ namespace MagicTheProgramming.Common
         string Name {get;}
         int Power {get;}
         int Toughness {get;}
-        void Update();
+        void Update(IPlayer player);
     }
 }

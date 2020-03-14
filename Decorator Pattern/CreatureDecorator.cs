@@ -18,6 +18,6 @@ namespace MagicTheProgramming.DecoratorPattern
         public virtual int Power => _creature.Power;
         public virtual int Toughness => _creature.Toughness;
 
-        public void Update() {}
+        public void Update(IPlayer player) {}
     }
 }

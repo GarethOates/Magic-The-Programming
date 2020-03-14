@@ -6,7 +6,7 @@ using MagicTheProgramming.Common;
 
 namespace MagicTheProgramming.ObserverPattern
 {
-    public abstract class Player
+    public abstract class Player : IPlayer
     {
         private int _lifeTotal;
         private List<ICreature> _creatures { get; set; }
@@ -53,7 +53,7 @@ namespace MagicTheProgramming.ObserverPattern
         {
             foreach (ICreature creature in _creatures)
             {
-                creature.Update();
+                creature.Update(this);
             }
         }
     }
