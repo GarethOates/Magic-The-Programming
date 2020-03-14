@@ -1,10 +1,10 @@
 using System;
-using MagicTheProgramming.Common;
 
-namespace MagicTheProgramming.DecoratorPattern
+namespace MagicTheProgramming.Common
 {
     public class Creature : ICreature
     {
+        public int Counters {get; set;}
         public string Name {get;}
         public int Power {get;}
         public int Toughness {get;}
@@ -16,10 +16,7 @@ namespace MagicTheProgramming.DecoratorPattern
             this.Toughness = toughness;
         }
 
-        public void Update(int total)
-        {
-            throw new NotImplementedException();
-        }
+        public virtual void Update() {}
     }
 }
 

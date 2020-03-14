@@ -30,9 +30,10 @@ namespace MagicTheProgramming.ObserverPattern
             }
         }
 
-        public Player(string name, int startingLifeTotal = 40)
+        public Player(string name, int startingLifeTotal)
         {
             this.Name = name;
+            _creatures = new List<ICreature>();
 
             _lifeTotal = startingLifeTotal;
         }
@@ -51,7 +52,7 @@ namespace MagicTheProgramming.ObserverPattern
         {
             foreach (ICreature creature in _creatures)
             {
-                creature.Update(this.LifeTotal);
+                creature.Update();
             }
         }
     }
