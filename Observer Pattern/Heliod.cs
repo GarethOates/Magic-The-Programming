@@ -17,6 +17,7 @@ namespace MagicTheProgramming.ObserverPattern
         public override void Update(IPlayer subject)
         {
             Console.WriteLine($"{this.Name}: {subject.Name} has been updated.");
+            Console.WriteLine($"{this.Name}: New Life Total: {subject.LifeTotal}");
             Console.WriteLine($"{this.Name}: Put a +1/+1 counter on target creature or enchantment you control.");
         }
     }

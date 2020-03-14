@@ -24,6 +24,8 @@ namespace MagicTheProgramming.ObserverPattern
                 if (value > _lifeTotal)
                 {
                     Console.WriteLine($"{this.Name} gained life");
+                    _lifeTotal = value;
+
                     Notify();
                 }
 

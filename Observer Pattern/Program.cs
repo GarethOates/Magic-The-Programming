@@ -7,7 +7,7 @@ namespace MagicTheProgramming.ObserverPattern
     {
         public static void Main(string[] args)
         {
-            var player1 = new CommanderPlayer("Gareth");
+            var player1 = new CommanderPlayer("Gareth", 40);
 
             Console.WriteLine($"{player1.Name} casts Ajani's Pridemate");
 
@@ -19,7 +19,7 @@ namespace MagicTheProgramming.ObserverPattern
             ICreature heliod = new Heliod("Heliod, Sun-Crowned", 5, 5);
             player1.Attach(heliod);
 
-            player1.LifeTotal += 1;
+            player1.LifeTotal += 5;
         }
     }
 }
