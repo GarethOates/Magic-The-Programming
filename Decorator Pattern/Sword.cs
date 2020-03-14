@@ -1,4 +1,5 @@
 using System;
+using MagicTheProgramming.Common;
 
 namespace MagicTheProgramming.DecoratorPattern
 {

@@ -1,4 +1,5 @@
 using System;
+using MagicTheProgramming.Common;
 
 namespace MagicTheProgramming.DecoratorPattern
 {
@@ -13,6 +14,11 @@ namespace MagicTheProgramming.DecoratorPattern
             this.Name = name;
             this.Power = power;
             this.Toughness = toughness;
+        }
+
+        public void Update(int total)
+        {
+            throw new NotImplementedException();
         }
     }
 }

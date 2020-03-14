@@ -1,4 +1,5 @@
 using System;
+using MagicTheProgramming.Common;
 
 namespace MagicTheProgramming.DecoratorPattern
 {
@@ -14,5 +15,10 @@ namespace MagicTheProgramming.DecoratorPattern
         public virtual string Name => _creature.Name;
         public virtual int Power => _creature.Power;
         public virtual int Toughness => _creature.Toughness;
+
+        public void Update(int total)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
