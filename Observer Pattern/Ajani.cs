@@ -17,7 +17,6 @@ namespace MagicTheProgramming.ObserverPattern
         public override void Update()
         {
             Console.WriteLine($"{this.Name}: Put a +1/+1 counter on Ajani's Pridemate.");
-            this.Counters++;
         }
     }
 }
