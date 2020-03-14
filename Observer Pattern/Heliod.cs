@@ -6,9 +6,9 @@ using MagicTheProgramming.Common;
 
 namespace MagicTheProgramming.ObserverPattern
 {
-    public class Ajani : Creature
+    public class Heliod : Creature
     {
-        public Ajani(string name, int power, int toughness)
+        public Heliod(string name, int power, int toughness)
         : base(name, power, toughness)
         {
 
@@ -16,7 +16,7 @@ namespace MagicTheProgramming.ObserverPattern
 
         public override void Update()
         {
-            Console.WriteLine($"{this.Name}: Put a +1/+1 counter on Ajani's Pridemate.");
+            Console.WriteLine($"{this.Name}: Put a +1/+1 counter on target creature or enchantment you control.");
             this.Counters++;
         }
     }
